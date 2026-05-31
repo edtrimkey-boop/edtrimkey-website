@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ed Trim Key | Academic Digital Operations</title>
+
+  <!-- Typography & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Favicon[cite: 1] -->
+  <link rel="icon" href="https://wjvoetdkkggyhtcoqqcj.supabase.co/storage/v1/object/public/Ed%20Trim%20Key/TRIM%20KEY%20FAVICON.png">
+
+  <style>
+    :root {
+      --bg: #0f172a; /*[cite: 1] */
+      --card: #1e293b; /*[cite: 1] */
+      --card-hover: #273549;
+      --cyan: #26C3EA; /*[cite: 1] */
+      --cyan-hover: #1baed4;
+      --text: #ffffff; /*[cite: 1] */
+      --muted: #94a3b8; /*[cite: 1] */
+      --border: #334155;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 5%;
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.85); /*[cite: 1] */
+      backdrop-filter: blur(12px); /*[cite: 1] */
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 32px; /*[cite: 1] */
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--cyan);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background: var(--cyan-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 140px 5% 100px;
+      text-align: center;
+      background: radial-gradient(circle at top, #1e293b 0%, #0f172a 60%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      max-width: 900px;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      color: var(--cyan);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 80px;
+    }
+
+    /* TRUST STRIP */
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .trust-item i {
+      color: var(--cyan);
+      width: 20px;
+      height: 20px;
+    }
+
+    /* LAYOUT UTILITIES */
+    .section {
+      padding: 100px 5%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ABOUT SECTION */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      background: var(--card);
+      padding: 60px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .about-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 24px;
+      font-size: 1.1rem;
+    }
+
+    .about-features {
+      list-style: none;
+    }
+
+    .about-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .about-features i {
+      color: var(--cyan);
+    }
+
+    /* SERVICES GRID */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 40px 32px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .card:hover {
+      background: var(--card-hover);
+      transform: translateY(-4px);
+      border-color: var(--cyan);
+    }
+
+    .card-icon {
+      background: rgba(38, 195, 234, 0.1);
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      color: var(--cyan);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* WHY CHOOSE US */
+    .benefits-wrapper {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 16px;
+    }
+
+    .benefit-item .icon-wrapper {
+      flex-shrink: 0;
+      color: var(--cyan);
+      margin-top: 4px;
+    }
+
+    .benefit-item h4 {
+      font-size: 1.125rem;
+      margin-bottom: 8px;
+    }
+
+    .benefit-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* BOTTOM CTA & CONTACT */
+    .cta-section {
+      text-align: center;
+      padding: 100px 5%;
+      background: linear-gradient(180deg, var(--bg) 0%, #020617 100%);
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      min-width: 250px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .contact-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    .contact-card i {
+      color: var(--cyan);
+      margin-bottom: 16px;
+      width: 32px;
+      height: 32px;
+    }
+
+    .contact-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #020617;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .footer-text {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-links a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--cyan);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+      }
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+      }
+      .nav-links {
+        display: none; /* Hide on mobile for simplicity in this version */
+      }
+      .trust-strip {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      footer {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#" class="logo">
+      <img src="https://wjvoetdkkggyhtcoqqcj.supabase.co/storage/v1/object/public/Ed%20Trim%20Key/Ed-Trim%20Kry%20Logo.png" alt="Ed Trim Key Logo"> <!--[cite: 1] -->
+      Ed Trim Key
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Digital Operations System for <span>Modern Institutes</span></h1>
+    <p>We provide schools and coaching centers with a structured, reliable platform to manage academic workflows, student data, and communications.</p>
+    
+    <div class="hero-buttons">
+      <a href="#services" class="btn btn-primary">
+        Explore Services <i data-lucide="arrow-right" style="width:18px;"></i>
+      </a>
+      <a href="#contact" class="btn btn-secondary">Contact Sales</a>
+    </div>
+
+    <div class="trust-strip">
+      <div class="trust-item"><i data-lucide="check-circle-2"></i> Paper Management</div>
+      <div class="trust-item"><i data-lucide="check-circle-2"></i> Document Generation</div>
+      <div class="trust-item"><i data-lucide="check-circle-2"></i> Student Systems</div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <div class="about-grid">
+      <div class="about-content">
+        <h2>Your Digital Operations Partner</h2>
+        <p>Ed Trim Key is engineered specifically for the administrative needs of schools and coaching institutes. We replace scattered processes with centralized, professional workflows.</p>
+        <p>Our focus is on structure, reliability, and simplicity, ensuring your administration runs efficiently behind the scenes.</p>
+        <ul class="about-features">
+          <li><i data-lucide="shield-check"></i> Secure & Reliable Infrastructure</li>
+          <li><i data-lucide="layout-dashboard"></i> Centralized Administration</li>
+          <li><i data-lucide="clock"></i> Streamlined Daily Operations</li>
+        </ul>
+      </div>
+      <div class="about-visual" style="text-align: center;">
+        <!-- Using a placeholder icon presentation instead of a complex graphic to keep it single file/clean -->
+        <i data-lucide="network" style="width: 200px; height: 200px; color: var(--border); opacity: 0.5;"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Core Modules</h2>
+      <p class="section-subtitle">A unified system structured into four functional categories to handle your entire administrative workload.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-icon">
+          <i data-lucide="file-text" style="width:32px; height:32px;"></i>
+        </div>
+        <h3>Academic Operations</h3>
+        <p>Manage test papers, structure examination documents, and maintain academic result systems with precision and uniformity.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-icon">
+          <i data-lucide="users" style="width:32px; height:32px;"></i>
+        </div>
+        <h3>Student Management</h3>
+        <p>Maintain accurate databases for student admissions, daily attendance tracking, and comprehensive academic profiles.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-icon">
+          <i data-lucide="wallet" style="width:32px; height:32px;"></i>
+        </div>
+        <h3>Fee & Billing</h3>
+        <p>Track fee collection, monitor payment statuses, and generate clear financial reports to keep operations sustainable.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="card-icon">
+          <i data-lucide="message-square" style="width:32px; height:32px;"></i>
+        </div>
+        <h3>Communication System</h3>
+        <p>Send automated WhatsApp alerts, routine reminders, and essential administrative notices directly to parents and staff.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why-us" class="benefits-wrapper section">
+    <div class="section-header">
+      <h2 class="section-title">Why Ed Trim Key</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="icon-wrapper"><i data-lucide="layers"></i></div>
+        <div>
+          <h4>Unified Workflow</h4>
+          <p>Consolidate your admission, attendance, and fee tracking into a single, cohesive environment rather than using multiple disconnected tools.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="icon-wrapper"><i data-lucide="file-output"></i></div>
+        <div>
+          <h4>Professional Documentation</h4>
+          <p>Automatically generate standardized admit cards and report cards that maintain a premium, trustworthy look for your institution.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="icon-wrapper"><i data-lucide="zap"></i></div>
+        <div>
+          <h4>Simplified Operations</h4>
+          <p>Designed for administrative staff, our interface requires minimal technical knowledge while delivering powerful organizational results.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="icon-wrapper"><i data-lucide="lock"></i></div>
+        <div>
+          <h4>Reliable Infrastructure</h4>
+          <p>Built with stability in mind, ensuring your institutional data is safely stored, well-structured, and accessible when you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA & CONTACT SECTION -->
+  <section id="contact" class="cta-section">
+    <h2 class="section-title">Ready to structure your operations?</h2>
+    <p class="section-subtitle" style="margin-bottom: 40px;">Get in touch to discuss how we can partner with your institute.</p>
+
+    <div class="contact-grid">
+      <a href="mailto:edtrimkey@gmail.com" class="contact-card">
+        <i data-lucide="mail"></i>
+        <h3>Email Us</h3>
+        <span>edtrimkey@gmail.com</span>
+      </a>
+      
+      <a href="https://wa.me/91XXXXXXXXXX" class="contact-card" target="_blank">
+        <i data-lucide="message-circle"></i>
+        <h3>WhatsApp</h3>
+        <span>Direct Message</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <img src="https://wjvoetdkkggyhtcoqqcj.supabase.co/storage/v1/object/public/Ed%20Trim%20Key/Ed-Trim%20Kry%20Logo.png" alt="Icon" style="height: 24px;"> <!--[cite: 1] -->
+      Ed Trim Key
+    </div>
+    
+    <div class="footer-text">
+      © 2026 Ed Trim Key. Academic Digital Operations Partner.
+    </div>
+
+    <div class="social-links">
+      <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+      <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+    </div>
+  </footer>
+
+  <!-- Initialize Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://biztrimkey.app.n8n.cloud/webhook/fae32e72-c2c8-4a35-8da0-0a37824cbc4d/chat'
+	});
+</script>
+</body>
+</html>
