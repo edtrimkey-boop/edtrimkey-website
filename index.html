@@ -2,504 +2,373 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Ed Trim Key | Academic Digital Operations</title>
 
   <!-- Typography & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600;800&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"> <!--[cite: 2] -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Favicon[cite: 1] -->
+  <!-- Favicon -->
   <link rel="icon" href="https://wjvoetdkkggyhtcoqqcj.supabase.co/storage/v1/object/public/Ed%20Trim%20Key/TRIM%20KEY%20FAVICON.png">
 
   <style>
-    :root {
-      --bg: #0f172a; /*[cite: 1] */
-      --card: #1e293b; /*[cite: 1] */
-      --card-hover: #273549;
-      --cyan: #26C3EA; /*[cite: 1] */
-      --cyan-hover: #1baed4;
-      --text: #ffffff; /*[cite: 1] */
-      --muted: #94a3b8; /*[cite: 1] */
-      --border: #334155;
-    }
+    /* === GLOBAL VARIABLES & RESET (From Command Center) === */
+    :root { 
+      --brand: #26C3EA; 
+      --brand-glow: rgba(38, 195, 234, 0.5); 
+      --bg: #0B111E; 
+      --card: #141E30; 
+      --card-light: #1D2C46; 
+      --text: #F1F5F9; 
+      --text-muted: #94A3B8; 
+      --border: rgba(255, 255, 255, 0.06); 
+      --premium-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5); 
+      --glass-bg: rgba(20, 30, 48, 0.7);
+    } /*[cite: 2] */
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      font-family: 'Montserrat', sans-serif; 
+      -webkit-tap-highlight-color: transparent; 
       scroll-behavior: smooth;
-    }
+    } /*[cite: 2] */
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { 
+      background: var(--bg); 
+      color: var(--text); 
+      line-height: 1.6; 
+      overflow-x: hidden;
+    } /*[cite: 2] */
 
-    /* TYPOGRAPHY */
-    h1, h2, h3 {
-      font-weight: 700;
-      line-height: 1.2;
-    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }  /*[cite: 2] */
+    ::-webkit-scrollbar-thumb { background: var(--card-light); border-radius: 10px; } /*[cite: 2] */
+    ::-webkit-scrollbar-track { background: transparent; } /*[cite: 2] */
 
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 5%;
-      position: sticky;
-      top: 0;
-      background: rgba(15, 23, 42, 0.85); /*[cite: 1] */
-      backdrop-filter: blur(12px); /*[cite: 1] */
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-    }
+    /* === TYPOGRAPHY === */
+    h1, h2, h3 { font-weight: 800; line-height: 1.2; } /*[cite: 2] */
+    .text-brand { color: var(--brand); } /*[cite: 2] */
+    .text-muted { color: var(--text-muted); } /*[cite: 2] */
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--text);
-      text-decoration: none;
-    }
+    /* === NAVBAR (Glassmorphism Top Bar) === */
+    .top-bar { 
+      height: 75px; 
+      background: var(--glass-bg); 
+      backdrop-filter: blur(16px); 
+      -webkit-backdrop-filter: blur(16px); 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 0 5%; 
+      border-bottom: 1px solid var(--border); 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+    } /*[cite: 2] */
 
-    .logo img {
-      height: 32px; /*[cite: 1] */
-    }
+    .brandRow { display: flex; align-items: center; gap: 12px; } /*[cite: 2] */
+    
+    .logo { 
+      width: 40px; 
+      height: 40px; 
+      border-radius: 10px; 
+      box-shadow: 0 0 15px var(--brand-glow); 
+      object-fit: contain; 
+    } /*[cite: 2] */
 
-    .nav-links {
-      display: flex;
-      gap: 32px;
-    }
+    .brand-text { 
+      font-family: 'Overpass', sans-serif; 
+      font-size: 20px; 
+      font-weight: 800; 
+      color: var(--text); 
+      letter-spacing: 1px; 
+    } /*[cite: 2] */
 
+    .nav-links { display: flex; gap: 30px; align-items: center; }
     .nav-links a {
       text-decoration: none;
-      color: var(--muted);
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--cyan);
-    }
-
-    /* BUTTONS */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: 6px;
-      text-decoration: none;
+      color: var(--text-muted);
       font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
+      font-size: 13px;
+      transition: 0.3s ease;
+    } /*[cite: 2] */
+    .nav-links a:hover { color: var(--brand); text-shadow: 0 0 10px rgba(38,195,234,0.3); } /*[cite: 2] */
 
-    .btn-primary {
-      background: var(--cyan);
-      color: #000;
-    }
+    /* === BUTTONS === */
+    .btn { 
+      display: inline-flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 8px; 
+      padding: 12px 24px; 
+      border-radius: 10px; 
+      font-weight: 800; 
+      cursor: pointer; 
+      font-size: 14px; 
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+      letter-spacing: 0.5px; 
+      text-decoration: none;
+    } /*[cite: 2] */
 
-    .btn-primary:hover {
-      background: var(--cyan-hover);
-      transform: translateY(-2px);
-    }
+    .btn-primary { 
+      background: linear-gradient(135deg, var(--brand) 0%, #1A9CBF 100%); 
+      color: #000; 
+      border: none; 
+      box-shadow: 0 4px 15px rgba(38,195,234,0.25);
+    } /*[cite: 2] */
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(38,195,234,0.4); } /*[cite: 2] */
 
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
+    .btn-outline { 
+      background: transparent; 
+      border: 1px solid var(--brand); 
+      color: var(--brand); 
+      box-shadow: none; 
+    } /*[cite: 2] */
+    .btn-outline:hover { background: rgba(38,195,234,0.1); transform: translateY(-2px); } /*[cite: 2] */
 
-    .btn-secondary:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-      transform: translateY(-2px);
-    }
+    /* === LAYOUT UTILITIES === */
+    .section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-title { font-size: 32px; font-weight: 900; margin-bottom: 15px; } /*[cite: 2] */
 
-    /* HERO SECTION */
-    .hero {
-      padding: 140px 5% 100px;
-      text-align: center;
-      background: radial-gradient(circle at top, #1e293b 0%, #0f172a 60%);
-      display: flex;
-      flex-direction: column;
+    /* === HERO SECTION === */
+    .hero { 
+      padding: 150px 5% 100px; 
+      text-align: center; 
+      display: flex; 
+      flex-direction: column; 
       align-items: center;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(38,195,234,0.05) 0%, transparent 70%);
+      z-index: -1;
     }
 
-    .hero h1 {
-      font-size: 3.5rem;
-      max-width: 900px;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
+    .hero h1 { font-size: 3.5rem; max-width: 900px; margin-bottom: 20px; font-weight: 900; } /*[cite: 2] */
+    .hero p { font-size: 16px; color: var(--text-muted); font-weight: 600; max-width: 600px; margin-bottom: 40px; } /*[cite: 2] */
+    
+    .hero-buttons { display: flex; gap: 15px; margin-bottom: 70px; }
 
-    .hero h1 span {
-      color: var(--cyan);
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--muted);
-      max-width: 650px;
-      margin-bottom: 40px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 80px;
-    }
-
-    /* TRUST STRIP */
+    /* === TRUST STRIP === */
     .trust-strip {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 30px;
       flex-wrap: wrap;
       padding-top: 40px;
       border-top: 1px solid var(--border);
       width: 100%;
-      max-width: 1000px;
-    }
+      max-width: 900px;
+    } /*[cite: 2] */
 
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 700;
+    } /*[cite: 2] */
 
-    .trust-item i {
-      color: var(--cyan);
-      width: 20px;
-      height: 20px;
-    }
+    .trust-item i { color: var(--brand); } /*[cite: 2] */
 
-    /* LAYOUT UTILITIES */
-    .section {
-      padding: 100px 5%;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
+    /* === PANELS & CARDS === */
+    .panel { 
+      background: linear-gradient(145deg, var(--card) 0%, #0F1724 100%); 
+      border-radius: 16px; 
+      padding: 40px; 
+      box-shadow: var(--premium-shadow); 
+      border: 1px solid var(--border); 
+      transition: 0.3s ease; 
+    } /*[cite: 2] */
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; } /*[cite: 2] */
 
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-    }
+    /* === SERVICES SECTION === */
+    .grid-kpis { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+      gap: 20px; 
+    } /*[cite: 2] */
 
-    .section-subtitle {
-      color: var(--muted);
-      font-size: 1.125rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* ABOUT SECTION */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      background: var(--card);
-      padding: 60px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-    }
-
-    .about-content h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .about-content p {
-      color: var(--muted);
-      margin-bottom: 24px;
-      font-size: 1.1rem;
-    }
-
-    .about-features {
-      list-style: none;
-    }
-
-    .about-features li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .about-features i {
-      color: var(--cyan);
-    }
-
-    /* SERVICES GRID */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 40px 32px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .card:hover {
-      background: var(--card-hover);
-      transform: translateY(-4px);
-      border-color: var(--cyan);
-    }
-
-    .card-icon {
-      background: rgba(38, 195, 234, 0.1);
-      padding: 16px;
-      border-radius: 12px;
-      margin-bottom: 24px;
-      color: var(--cyan);
-    }
-
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    /* WHY CHOOSE US */
-    .benefits-wrapper {
-      background: var(--card);
-      border-top: 1px solid var(--border);
+    .kpi-card { 
+      background: var(--card); 
+      padding: 30px 25px; 
+      border-radius: 16px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+      border-top: 4px solid var(--card-light); 
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-    }
+      transition: 0.3s ease;
+    } /*[cite: 2] */
 
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-    }
+    .kpi-card:hover { 
+      transform: translateY(-5px); 
+      border-top-color: var(--brand); 
+      background: linear-gradient(145deg, var(--card) 0%, #0F1724 100%);
+    } /*[cite: 2] */
 
-    .benefit-item {
+    .kpi-card-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(38, 195, 234, 0.1);
+      border-radius: 12px;
       display: flex;
-      gap: 16px;
-    }
+      align-items: center;
+      justify-content: center;
+      color: var(--brand);
+      margin-bottom: 20px;
+    } /*[cite: 2] */
 
-    .benefit-item .icon-wrapper {
-      flex-shrink: 0;
-      color: var(--cyan);
-      margin-top: 4px;
-    }
+    .kpi-card h4 { 
+      font-size: 16px; 
+      color: var(--text); 
+      margin-bottom: 10px; 
+      letter-spacing: 0.5px; 
+      font-weight: 800;
+      text-transform: uppercase;
+    } /*[cite: 2] */
 
-    .benefit-item h4 {
-      font-size: 1.125rem;
-      margin-bottom: 8px;
-    }
+    .kpi-card p { 
+      font-size: 13px; 
+      color: var(--text-muted); 
+      font-weight: 600; 
+    } /*[cite: 2] */
 
-    .benefit-item p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+    /* === WHY US SECTION === */
+    .activity-list { display: flex; flex-direction: column; gap: 15px; }
+    .activity { 
+      background: var(--card); 
+      padding: 20px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+      border-left: 3px solid var(--brand); 
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    } /*[cite: 2] */
 
-    /* BOTTOM CTA & CONTACT */
-    .cta-section {
+    .activity i { color: var(--brand); margin-top: 2px; } /*[cite: 2] */
+    .activity h3 { font-size: 15px; color: var(--text); margin-bottom: 5px; font-weight: 800; } /*[cite: 2] */
+    .activity p { font-size: 13px; color: var(--text-muted); font-weight: 600; } /*[cite: 2] */
+
+    /* === CONTACT & FOOTER === */
+    .contact-wrapper {
+      background: linear-gradient(145deg, var(--card), #0B111E);
+      border-top: 1px solid var(--border);
       text-align: center;
-      padding: 100px 5%;
-      background: linear-gradient(180deg, var(--bg) 0%, #020617 100%);
-    }
+      padding: 80px 5%;
+    } /*[cite: 2] */
 
     .contact-grid {
       display: flex;
       justify-content: center;
-      gap: 32px;
-      margin-top: 40px;
+      gap: 20px;
+      margin-top: 30px;
       flex-wrap: wrap;
     }
 
-    .contact-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 32px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      min-width: 250px;
-      text-decoration: none;
-      color: var(--text);
-      transition: all 0.2s ease;
-    }
+    footer { 
+      text-align: center; 
+      padding: 30px 20px; 
+      border-top: 1px solid var(--border); 
+      background: var(--bg);
+    } /*[cite: 2] */
 
-    .contact-card:hover {
-      border-color: var(--cyan);
-      transform: translateY(-2px);
-    }
-
-    .contact-card i {
-      color: var(--cyan);
-      margin-bottom: 16px;
-      width: 32px;
-      height: 32px;
-    }
-
-    .contact-card span {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 8px;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #020617;
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text);
+    .footer-brand { 
+      font-size: 14px; 
+      color: var(--brand); 
+      font-weight: 600; 
+      margin-bottom: 5px; 
+    } /*[cite: 2] */
+    
+    .footer-copy { 
+      font-size: 12px; 
+      color: var(--text-muted); 
       font-weight: 600;
-    }
+    } /*[cite: 2] */
 
-    .footer-text {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+    .social-links { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
+    .social-links a { color: var(--text-muted); transition: 0.3s; } /*[cite: 2] */
+    .social-links a:hover { color: var(--brand); } /*[cite: 2] */
 
-    .social-links {
-      display: flex;
-      gap: 16px;
-    }
-
-    .social-links a {
-      color: var(--muted);
-      transition: color 0.2s ease;
-    }
-
-    .social-links a:hover {
-      color: var(--cyan);
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 992px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-        padding: 40px 24px;
-      }
-      .benefits-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
+    /* === RESPONSIVE === */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-      }
-      .nav-links {
-        display: none; /* Hide on mobile for simplicity in this version */
-      }
-      .trust-strip {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      }
-      footer {
-        flex-direction: column;
-        gap: 24px;
-        text-align: center;
-      }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.5rem; }
+      .grid-2 { grid-template-columns: 1fr; gap: 30px; } /*[cite: 2] */
+      .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
+      .trust-strip { flex-direction: column; align-items: center; gap: 15px; }
     }
   </style>
 </head>
 <body>
 
   <!-- NAVIGATION -->
-  <nav>
-    <a href="#" class="logo">
-      <img src="https://wjvoetdkkggyhtcoqqcj.supabase.co/storage/v1/object/public/Ed%20Trim%20Key/Ed-Trim%20Kry%20Logo.png" alt="Ed Trim Key Logo"> <!--[cite: 1] -->
-      Ed Trim Key
+  <nav class="top-bar">
+    <a href="#" style="text-decoration: none;">
+      <div class="brandRow">
+        <img class="logo" src="https://wjvoetdkkggyhtcoqqcj.supabase.co/storage/v1/object/public/Ed%20Trim%20Key/TRIM%20KEY%20FAVICON.png" alt="Ed Trim Key Logo">
+        <div class="brand-text">Ed Trim Key</div>
+      </div>
     </a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#why-us">Why Us</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-outline" style="padding: 8px 16px;">Contact Sales</a>
     </div>
   </nav>
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <h1>Digital Operations System for <span>Modern Institutes</span></h1>
-    <p>We provide schools and coaching centers with a structured, reliable platform to manage academic workflows, student data, and communications.</p>
+    <h1>Structure Your Academic Digital Operations</h1>
+    <p>A reliable, centralized workflow system designed to manage papers, student data, and administration for modern schools and coaching institutes.</p>
     
     <div class="hero-buttons">
       <a href="#services" class="btn btn-primary">
         Explore Services <i data-lucide="arrow-right" style="width:18px;"></i>
       </a>
-      <a href="#contact" class="btn btn-secondary">Contact Sales</a>
+      <a href="#contact" class="btn btn-outline">Connect via WhatsApp</a>
     </div>
 
     <div class="trust-strip">
-      <div class="trust-item"><i data-lucide="check-circle-2"></i> Paper Management</div>
-      <div class="trust-item"><i data-lucide="check-circle-2"></i> Document Generation</div>
-      <div class="trust-item"><i data-lucide="check-circle-2"></i> Student Systems</div>
+      <div class="trust-item"><i data-lucide="check-circle-2" style="width: 18px;"></i> Test Paper Workflow</div>
+      <div class="trust-item"><i data-lucide="check-circle-2" style="width: 18px;"></i> Document Generation</div>
+      <div class="trust-item"><i data-lucide="check-circle-2" style="width: 18px;"></i> Student Database</div>
     </div>
   </section>
 
   <!-- ABOUT SECTION -->
   <section id="about" class="section">
-    <div class="about-grid">
-      <div class="about-content">
-        <h2>Your Digital Operations Partner</h2>
-        <p>Ed Trim Key is engineered specifically for the administrative needs of schools and coaching institutes. We replace scattered processes with centralized, professional workflows.</p>
-        <p>Our focus is on structure, reliability, and simplicity, ensuring your administration runs efficiently behind the scenes.</p>
-        <ul class="about-features">
-          <li><i data-lucide="shield-check"></i> Secure & Reliable Infrastructure</li>
-          <li><i data-lucide="layout-dashboard"></i> Centralized Administration</li>
-          <li><i data-lucide="clock"></i> Streamlined Daily Operations</li>
-        </ul>
+    <div class="panel grid-2" style="border-left: 4px solid var(--brand);">
+      <div>
+        <h2 style="font-size: 28px; margin-bottom: 20px; font-weight: 900;">Your Digital Operations Partner</h2>
+        <p class="text-muted" style="margin-bottom: 20px; font-weight: 600;">
+          Ed Trim Key is engineered specifically for the administrative needs of educational institutions. We replace scattered, manual processes with centralized, professional digital workflows.
+        </p>
+        <p class="text-muted" style="font-weight: 600;">
+          Our infrastructure focuses on structure, reliability, and simplicity, ensuring your administration runs efficiently behind the scenes without the need for complex technical training.
+        </p>
       </div>
-      <div class="about-visual" style="text-align: center;">
-        <!-- Using a placeholder icon presentation instead of a complex graphic to keep it single file/clean -->
-        <i data-lucide="network" style="width: 200px; height: 200px; color: var(--border); opacity: 0.5;"></i>
+      <div style="background: rgba(0,0,0,0.2); border: 2px dashed var(--card-light); border-radius: 12px; padding: 40px; text-align: center;">
+         <i data-lucide="server" style="width: 80px; height: 80px; color: var(--border); margin-bottom: 15px;"></i>
+         <p style="font-size: 13px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Secure Cloud Infrastructure</p>
       </div>
     </div>
   </section>
@@ -508,134 +377,116 @@
   <section id="services" class="section">
     <div class="section-header">
       <h2 class="section-title">Core Modules</h2>
-      <p class="section-subtitle">A unified system structured into four functional categories to handle your entire administrative workload.</p>
+      <p class="text-muted" style="max-width: 600px; margin: auto; font-weight: 600;">A unified system structured into four functional categories to handle your entire administrative workload.</p>
     </div>
 
-    <div class="services-grid">
+    <div class="grid-kpis">
       <!-- Card 1 -->
-      <div class="card">
-        <div class="card-icon">
-          <i data-lucide="file-text" style="width:32px; height:32px;"></i>
-        </div>
-        <h3>Academic Operations</h3>
-        <p>Manage test papers, structure examination documents, and maintain academic result systems with precision and uniformity.</p>
+      <div class="kpi-card" style="border-top-color: var(--brand);">
+        <div class="kpi-card-icon"><i data-lucide="file-text"></i></div>
+        <h4>Academic Operations</h4>
+        <p>Manage test papers, structure examination documents, and maintain academic result systems with precision.</p>
       </div>
 
       <!-- Card 2 -->
-      <div class="card">
-        <div class="card-icon">
-          <i data-lucide="users" style="width:32px; height:32px;"></i>
-        </div>
-        <h3>Student Management</h3>
-        <p>Maintain accurate databases for student admissions, daily attendance tracking, and comprehensive academic profiles.</p>
+      <div class="kpi-card" style="border-top-color: #2ECC71;"> <!-- Using Dashboard Success Color -->
+        <div class="kpi-card-icon" style="background: rgba(46, 204, 113, 0.1); color: #2ECC71;"><i data-lucide="users"></i></div>
+        <h4>Student Management</h4>
+        <p>Maintain accurate databases for student admissions, daily attendance tracking, and academic profiles.</p>
       </div>
 
       <!-- Card 3 -->
-      <div class="card">
-        <div class="card-icon">
-          <i data-lucide="wallet" style="width:32px; height:32px;"></i>
-        </div>
-        <h3>Fee & Billing</h3>
+      <div class="kpi-card" style="border-top-color: #F59E0B;"> <!-- Using Dashboard Accent Color -->
+        <div class="kpi-card-icon" style="background: rgba(245, 158, 11, 0.1); color: #F59E0B;"><i data-lucide="wallet"></i></div>
+        <h4>Fee & Billing</h4>
         <p>Track fee collection, monitor payment statuses, and generate clear financial reports to keep operations sustainable.</p>
       </div>
 
       <!-- Card 4 -->
-      <div class="card">
-        <div class="card-icon">
-          <i data-lucide="message-square" style="width:32px; height:32px;"></i>
-        </div>
-        <h3>Communication System</h3>
-        <p>Send automated WhatsApp alerts, routine reminders, and essential administrative notices directly to parents and staff.</p>
+      <div class="kpi-card" style="border-top-color: #8B5CF6;"> <!-- Using Dashboard Purple Color -->
+        <div class="kpi-card-icon" style="background: rgba(139, 92, 246, 0.1); color: #8B5CF6;"><i data-lucide="message-square"></i></div>
+        <h4>Communication</h4>
+        <p>Send automated WhatsApp alerts, routine reminders, and essential administrative notices to parents and staff.</p>
       </div>
     </div>
   </section>
 
   <!-- WHY CHOOSE US -->
-  <section id="why-us" class="benefits-wrapper section">
-    <div class="section-header">
-      <h2 class="section-title">Why Ed Trim Key</h2>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-item">
-        <div class="icon-wrapper"><i data-lucide="layers"></i></div>
-        <div>
-          <h4>Unified Workflow</h4>
-          <p>Consolidate your admission, attendance, and fee tracking into a single, cohesive environment rather than using multiple disconnected tools.</p>
-        </div>
+  <section id="why-us" class="section">
+    <div class="grid-2">
+      <div>
+        <h2 class="section-title">Why Ed Trim Key</h2>
+        <p class="text-muted" style="margin-bottom: 30px; font-weight: 600;">Built from the ground up to solve the specific operational challenges faced by coaching centers and schools.</p>
       </div>
-      <div class="benefit-item">
-        <div class="icon-wrapper"><i data-lucide="file-output"></i></div>
-        <div>
-          <h4>Professional Documentation</h4>
-          <p>Automatically generate standardized admit cards and report cards that maintain a premium, trustworthy look for your institution.</p>
+      
+      <div class="activity-list">
+        <div class="activity">
+          <i data-lucide="layers"></i>
+          <div>
+            <h3>Unified Workflow</h3>
+            <p>Consolidate your admission, attendance, and fee tracking into a single environment.</p>
+          </div>
         </div>
-      </div>
-      <div class="benefit-item">
-        <div class="icon-wrapper"><i data-lucide="zap"></i></div>
-        <div>
-          <h4>Simplified Operations</h4>
-          <p>Designed for administrative staff, our interface requires minimal technical knowledge while delivering powerful organizational results.</p>
+        
+        <div class="activity">
+          <i data-lucide="file-output"></i>
+          <div>
+            <h3>Professional Documentation</h3>
+            <p>Automatically generate standardized admit cards and report cards.</p>
+          </div>
         </div>
-      </div>
-      <div class="benefit-item">
-        <div class="icon-wrapper"><i data-lucide="lock"></i></div>
-        <div>
-          <h4>Reliable Infrastructure</h4>
-          <p>Built with stability in mind, ensuring your institutional data is safely stored, well-structured, and accessible when you need it.</p>
+        
+        <div class="activity">
+          <i data-lucide="shield-check"></i>
+          <div>
+            <h3>Reliable Infrastructure</h3>
+            <p>Built with stability in mind, ensuring your data is securely stored and accessible.</p>
+          </div>
+        </div>
+
+        <div class="activity">
+          <i data-lucide="mouse-pointer-click"></i>
+          <div>
+            <h3>Simplified Operations</h3>
+            <p>Designed for administrative staff, requiring minimal technical knowledge.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA & CONTACT SECTION -->
-  <section id="contact" class="cta-section">
+  <section id="contact" class="contact-wrapper">
     <h2 class="section-title">Ready to structure your operations?</h2>
-    <p class="section-subtitle" style="margin-bottom: 40px;">Get in touch to discuss how we can partner with your institute.</p>
+    <p class="text-muted" style="margin-bottom: 40px; font-weight: 600;">Get in touch to discuss how we can integrate with your institute.</p>
 
     <div class="contact-grid">
-      <a href="mailto:edtrimkey@gmail.com" class="contact-card">
-        <i data-lucide="mail"></i>
-        <h3>Email Us</h3>
-        <span>edtrimkey@gmail.com</span>
+      <a href="mailto:edtrimkey@gmail.com" class="btn btn-outline" style="min-width: 200px;">
+        <i data-lucide="mail" style="width: 18px;"></i> Email Us
       </a>
       
-      <a href="https://wa.me/918235400967" class="contact-card" target="_blank">
-        <i data-lucide="message-circle"></i>
-        <h3>WhatsApp</h3>
-        <span>Direct Message</span>
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-primary" target="_blank" style="min-width: 200px;">
+        <i data-lucide="message-circle" style="width: 18px;"></i> Message via WhatsApp
       </a>
+    </div>
+
+    <div class="social-links" style="margin-top: 50px;">
+      <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+      <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-brand">
-      <img src="https://wjvoetdkkggyhtcoqqcj.supabase.co/storage/v1/object/public/Ed%20Trim%20Key/Ed-Trim%20Kry%20Logo.png" alt="Icon" style="height: 24px;"> <!--[cite: 1] -->
-      Ed Trim Key
-    </div>
-    
-    <div class="footer-text">
-      © 2026 Ed Trim Key. Academic Digital Operations Partner.
-    </div>
-
-    <div class="social-links">
-      <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-      <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-      <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
-    </div>
+    <div class="footer-brand">Crafted with ❤️ by Ed Trim Key</div>
+    <div class="footer-copy">© <span id="year"></span> Academic Digital Operations Partner. All rights reserved.</div>
   </footer>
 
-  <!-- Initialize Icons -->
+  <!-- Scripts -->
   <script>
     lucide.createIcons();
+    document.getElementById("year").textContent = new Date().getFullYear(); /*[cite: 2] */
   </script>
-  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-	createChat({
-		webhookUrl: 'https://biztrimkey.app.n8n.cloud/webhook/fae32e72-c2c8-4a35-8da0-0a37824cbc4d/chat'
-	});
-</script>
 </body>
 </html>
