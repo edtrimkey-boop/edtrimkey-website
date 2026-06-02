@@ -488,5 +488,13 @@
     lucide.createIcons();
     document.getElementById("year").textContent = new Date().getFullYear(); /*[cite: 2] */
   </script>
+   <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://biztrimkey.app.n8n.cloud/webhook/fae32e72-c2c8-4a35-8da0-0a37824cbc4d/chat'
+	});
+</script>
 </body>
 </html>
